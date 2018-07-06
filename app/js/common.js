@@ -70,6 +70,16 @@ $(document).ready(function (){
           owl.trigger('refresh.owl.carousel');
         }
       }
+  });*/
+
+	// Button animation
+  $(".sandwich, .mnu-item").click(function() {
+    if ($(".mnu-line, .mnu-item, .mnu-mob").hasClass("active") && $('.sandwich').is(':visible')) {
+      $(".mnu-line, .mnu-item, .mnu-mob").fadeOut(600).toggleClass("active");
+      $(".sandwich").toggleClass("active");
+    } else if (!$(".mnu-line, .mnu-item, .mnu-mob").hasClass("active") && $('.sandwich').is(':visible')) {
+      $(".mnu-line, .mnu-item, .mnu-mob").fadeIn(600).toggleClass("active");
+      $(".sandwich").toggleClass("active");
+    }
   });
-*/
 });

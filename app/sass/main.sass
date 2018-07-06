@@ -45,6 +45,7 @@ b, strong
 header
 	height: calc(100vh - 100px)
 
+
 .mnu 
 	height: 100px
 	position: fixed
@@ -55,20 +56,79 @@ header
 	display: flex
 	align-items: center
 	background-color: $main
+	&-mob
+		display: none
 	&-logo
+		height: 100px
+		width: 100%
+		display: flex
+		align-items: center
 		img
 			height: 70px
 	&-line
 		width: 100%
-		height: 100%
+		height: 100px
 		margin: 0
 		padding: 0
-		display: flex
+		display: flex !important
 		align-items: center
 		justify-content: flex-end
+	&-btn
+		$w: 50px
+		$h: 5px
+		display: none
+		height: 100%
+		float: right
+		align-items: center
+		+media-breakpoint-up(md)
+			display: none
+		.sandwich 
+			width: $w
+			height: $w
+			z-index: 200
+			.sw-topper
+				position: relative
+				top: $h*1.5
+				width: $w
+				height: $h
+				background: $text
+				border: none
+				border-radius: 4px 4px 4px 4px
+				transition: transform 0.5s, top 0.2s
+			.sw-bottom
+				position: relative
+				width: $w
+				height: $h
+				top: $h*3.5
+				background: $text
+				border: none
+				border-radius: 4px 4px 4px 4px
+				transition: transform 0.5s, top 0.2s
+				transition-delay: 0.2s, 0s
+			.sw-footer
+				position: relative
+				width: $w
+				height: $h
+				top: $h*5.5
+				background: $text
+				border: none
+				border-radius: 4px 4px 4px 4px
+				transition: all 0.5s
+				transition-delay: 0.1s
+		.sandwich.active 
+			.sw-topper
+				top: $h*4.5
+				transform: rotate(140deg)
+			.sw-bottom
+				top: $h*3.5
+				transform: rotate(-140deg)
+			.sw-footer
+				opacity: 0
+				top: 0
+				transform: rotate(180deg)
 	&-item
 		list-style-type: none
-		display: inline-block
+		display: inline-block !important
 		a
 			padding: 11px
 			text-decoration: none
@@ -80,6 +140,47 @@ header
 			&:hover
 				color: $text-accent
 				transition: 0.2s
+
++media-breakpoint-down(sm)
+	.mnu
+		height: 60px
+		&-mob
+			content: ""
+			position: absolute
+			width: 100vw
+			height: 200vh
+			background-color: $main
+		&-line
+			display: none !important
+			width: 100%
+			height: 100vh
+			position: absolute
+			top: 15vh
+			left: 0
+			align-items: center
+			text-align: center
+		&-logo
+			height: 60px
+			width: auto
+			float: left
+			img
+				height: 50px
+		&-btn
+			display: flex
+		&-item
+			display: none !important
+			a
+				padding: 11px
+				color: $text
+				font-size: 24px	
+				&:hover
+					color: $text-accent
+		&-mob.active
+			display: block
+		&-line.active
+			display: block !important
+		&-item.active
+			display: block !important
 
 .owl-carousel
 	height: calc(100vh - 100px)
@@ -142,7 +243,6 @@ header
 				color: $black
 				transition: 0.2s
 
-
 .arr-down
 	position: relative
 	z-index: 1000
@@ -175,7 +275,6 @@ header
 			&:nth-of-type(3)
 				top: 32px
 				animation-delay: .3s
-
 
 .animated
 	animation-duration: 1.5s
@@ -215,7 +314,6 @@ header
 		outline: none
 		margin: 0 65px
 
-
 @-webkit-keyframes sdb07
   0%
     opacity: 0
@@ -237,6 +335,119 @@ header
   100%
     opacity: 0
 
++media-breakpoint-down(lg)
+	.owl-carousel
+		height: calc(100vh - 100px)
+	#slider
+		height: calc(100vh - 100px)
+		margin-top: 100px
+		.owl-item
+			height: calc(100vh - 100px)
+		.item
+			text-align: center
+			&-content
+				height: calc(100vh - 100px)
+				width: 100vw
+			&-title
+				margin-bottom: 10px
+				font-size: 48px
+			&-desc
+				width: 70%
+				margin: 0 auto 35px
+				font-size: 18px
+		.btn-wrap
+			height: 44px
+			width: 200px
+			.btn
+				height: 44px
+				width: 200px
+				line-height: 44px
+				font-size: 14px
+				letter-spacing: 0.8px
+				word-spacing: 2px
+		.arr-down
+			display: none
+	.owl-dots 
+		top: -110px
+	.owl-nav
+		display: none
+
++media-breakpoint-down(sm)
+	.owl-carousel
+		height: calc(100vh - 60px)
+	#slider
+		height: calc(100vh - 60px)
+		margin-top: 60px
+		.owl-item
+			height: calc(100vh - 60px)
+		.item
+			text-align: center
+			&-content
+				height: calc(100vh - 60px)
+				width: 100vw
+			&-title
+				margin-bottom: 10px
+				font-size: 48px
+			&-desc
+				width: 70%
+				margin: 0 auto 35px
+				font-size: 18px
+		.btn-wrap
+			height: 44px
+			width: 200px
+			.btn
+				height: 44px
+				width: 200px
+				line-height: 44px
+				font-size: 14px
+				letter-spacing: 0.8px
+				word-spacing: 2px
+	.arr-down
+		display: none
+	.owl-dots 
+		top: -110px
+	.owl-nav
+		display: none
+
++media-breakpoint-down(xs)
+	.owl-carousel
+		height: calc(100vh - 60px)
+	#slider
+		height: calc(100vh - 60px)
+		margin-top: 60px
+		.owl-item
+			height: calc(100vh - 60px)
+		.item
+			text-align: center
+			&-content
+				height: calc(100vh - 60px)
+				width: 100vw
+			&-title
+				margin-bottom: 10px
+				font-size: 40px
+			&-desc
+				width: 90%
+				margin: 0 auto 25px
+				font-size: 16px
+		.btn-wrap
+			height: 40px
+			width: 170px
+			.btn
+				height: 40px
+				width: 170px
+				line-height: 40px
+				font-size: 12px
+				letter-spacing: 0.8px
+				word-spacing: 2px
+	.arr-down
+		display: none
+	.owl-dots 
+		top: -110px
+	.owl-nav
+		display: none
+
+
+/************************* About us section *************************/
 hr 
 	display: block
 	position: relative
@@ -279,6 +490,21 @@ hr
 			border-left: 1px solid $text
 			border-bottom: 1px solid $text
 
++media-breakpoint-down(sm)
+	.title
+		font-size: 28px
+		font-family: "helvetica-7"
+		line-height: 1.1
+		text-align: center
+	.about-us
+		height: auto
+		padding-top: 80px
+		padding-bottom: 40px
+		&-title
+			margin-bottom: 15px
+		&-text
+			margin-top: 5px
+			font-size: 16px
 
 .about-us-2
 	height: 720px
@@ -286,11 +512,15 @@ hr
 		width: 650px
 		height: 650px
 		margin-top: 35px
-		border: solid 1px $main
 		padding: 50px
-		border-radius: 100%
-		background-clip: content-box
-		background-color: $main
+		// border: solid 1px $main
+		// border-radius: 100%
+		// background-clip: content-box
+		// background-color: $main
+		background: url(../img/about-us-2-circle.svg)
+		background-repeat: no-repeat
+		background-size: 650px 650px
+		background-position: center
 		hr
 			margin-top: 70px
 	&-title
@@ -303,6 +533,71 @@ hr
 		line-height: 1.625
 		text-align: center
 
++media-breakpoint-down(md)
+	.about-us-2
+		height: 720px
+		&-wrap
+			width: 100vw
+			display: flex
+			align-items: center
+			justify-content: center
+		&-container
+			width: 650px
+			height: 650px
+			margin-top: 35px
+			padding: 50px
+			// border-radius: 100%
+			// border: solid 1px $main
+			// background-clip: content-box
+			// background-color: $main
+			background: url(../img/about-us-2-circle.svg)
+			background-repeat: no-repeat
+			background-size: 650px 650px
+			background-position: center
+			hr
+				margin-top: 70px
+		&-title
+			font-size: 40px
+			margin-top: 25px
+			margin-bottom: 25px
+		&-text
+			font-size: 16px
+			font-family: "helvetica-5"
+			color: $text-minor
+			line-height: 1.625
+			text-align: center
+
++media-breakpoint-down(xs)
+	.about-us-2
+		height: 720px
+		&-wrap
+			width: 100%
+			display: block
+		&-container
+			width: 650px
+			height: 650px
+			margin-top: 35px
+			padding: 30px 25px 25px
+			// border-radius: 100%
+			// border: solid 1px $main
+			// background-clip: content-box
+			// background-color: $main
+			background: url(../img/about-us-2-circle.svg)
+			background-repeat: no-repeat
+			background-size: 650px 650px
+			background-position: center
+			hr
+				margin-top: 80px
+		&-title
+			font-size: 28px
+			margin-top: 25px
+			margin-bottom: 25px
+		&-text
+			font-size: 15px
+			font-family: "helvetica-5"
+			color: $text-minor
+			line-height: 1.625
+			text-align: center
 
 .approach
 	height: 830px
@@ -389,6 +684,71 @@ hr
 			font-family: "helvetica-5"
 			font-size: 16px
 			color: $text-minor
+
+		
+
+.solutions
+	padding: 100px 0
+	&-title
+		margin-bottom: 35px
+	hr 
+		margin-bottom: 35px
+	&-item
+		height: 485px
+		padding: 30px 35px
+		margin-bottom: 30px
+		position: relative
+		background-color: $main-accent
+		+media-breakpoint-down(md)
+			height: 385px
+		+media-breakpoint-down(xs)
+			height: 485px
+		&-item
+			width: 32px
+			height: 32px
+		&-title
+			font-family: "helvetica-7"
+			font-size: 24px
+			line-height: 1.2
+			margin-top: 20px
+			margin-bottom: 20px
+		&-desc
+			max-height: 240px
+			overflow: hidden
+			line-height: 1.5
+			font-family: "helvetica-5"
+			font-size: 16px
+			color: $text-minor
+		&-btn
+			height: 30px
+			width: 125px
+			margin: 0
+			position: absolute
+			bottom: 35px
+			&-cont
+				height: 30px
+				width: 125px
+				display: inline-block
+				line-height: 30px
+				letter-spacing: 0.6px
+				word-spacing: 2px
+				text-align: center
+				text-decoration: none
+				text-transform: uppercase
+				font-size: 12px
+				font-family: "helvetica-7"
+				font-weight: bold
+				background-color: $main-accent
+				border-radius: 3px
+				border: 1px solid $text-accent
+				color: $text-accent
+				transition: 0.2s
+				&:hover
+					text-decoration: none
+					background-color: $text-accent
+					color: $main-accent
+					transition: 0.2s
+
 
 
 
