@@ -536,6 +536,8 @@ hr
 +media-breakpoint-down(md)
 	.about-us-2
 		height: 720px
+		width: 100vw
+		overflow: hidden
 		&-wrap
 			width: 100vw
 			display: flex
@@ -685,7 +687,115 @@ hr
 			font-size: 16px
 			color: $text-minor
 
-		
++media-breakpoint-down(lg)
+	.approach
+		height: 1470px
+		padding: 0 0 60px
+		position: relative
+		&-wrap
+			width: 100vw
+			max-width: 100vw
+			padding: 0
+			position: relative
+			top: 640px
+		&-row
+			width: 100vw
+			margin: 0
+		&-col
+			padding: 0
+		&-img
+			width: 100%
+			&-container
+				width: 100%
+		&-content-wrap
+			background-color: $main-accent
+			width: calc(100vw - 120px)
+			position: relative	
+			padding: 75px 100px 0
+			margin-left: 0
+			float: right
+		&-number-box
+			top: 0
+			left: 0
+		&-title
+			margin-bottom: 10px
+		&-list
+			&-number
+				top: -30px
+				left: -210px
+
+
++media-breakpoint-down(md)
+	.approach
+		height: 1490px
+		&-wrap
+			top: 660px
+		&-content-wrap
+			padding: 50px 50px 0
+			margin-left: 0
+		&-list
+			&-number
+				left: -160px
+
++media-breakpoint-down(sm)
+	.approach
+		height: 1590px
+		padding: 0 0 60px
+		&-wrap
+			top: 690px
+		&-row
+			width: 100vw
+			margin: 0
+		&-col
+			padding: 0
+		&-img
+			height: 830px
+			width: 100%
+			&-container
+				position: relative
+				height: 830px
+				width: 100%
+		&-content-wrap
+			background-color: $main-accent
+			width: calc(100vw - 120px)
+			position: relative	
+			padding: 50px 50px 0
+			margin-left: 0
+			float: right
+		&-number-box
+			height: 900px
+		&-list
+			&-number
+				top: -30px
+				left: -160px
+
++media-breakpoint-down(xs)
+	.approach
+		height: 1230px
+		padding: 0 0 60px
+		&-wrap
+			top: 330px
+		&-img
+			height: 330px
+			&-container
+				height: 330px
+		&-content-wrap
+			width: 100%
+			padding: 50px 40px 0 50px
+		&-number-box
+			display: none
+		&-list
+			&-number
+				top: -30px
+				left: -50px
+				color: #e1e4e8
+				border-bottom: none
+
+@media (max-width: 400px)
+	.approach
+		height: 1550px
+
+
 
 .solutions
 	padding: 100px 0
@@ -699,7 +809,7 @@ hr
 		margin-bottom: 30px
 		position: relative
 		background-color: $main-accent
-		+media-breakpoint-down(md)
+		+media-breakpoint-down(sm)
 			height: 385px
 		+media-breakpoint-down(xs)
 			height: 485px
