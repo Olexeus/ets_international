@@ -72,18 +72,3 @@ gulp.task('watch', ['styles', 'js', 'browser-sync'], function() {
 
 gulp.task('default', ['watch']);
 
-
-// Run git init
-// src is the root folder for git to initialize
-gulp.task('init', function(){
-  git.init(function (err) {
-    if (err) throw err;
-  });
-});
-
-// Run git add
-// src is the file(s) to add (or ./*)
-gulp.task('add', function(){
-  return gulp.src('./*')
-    .pipe(git.add());
-});
