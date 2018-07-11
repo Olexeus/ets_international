@@ -1,13 +1,12 @@
 {
-  "name": "optimizedhtml",
+  "name": "ets",
   "version": "4.0.0",
-  "description": "OptimizedHTML 4 - Start HTML Template",
+  "description": "ETS - International",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "WebDesign Master",
-  "license": "ISC",
+  "author": "Fedorenko Oleksii",
   "devDependencies": {
     "animate.css": "^3.6.1",
     "browser-sync": "^2.24.5",
