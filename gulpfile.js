@@ -1,6 +1,7 @@
-var syntax        = 'sass'; // Syntax: sass or scss;
 
-var gulp          = require('gulp'),
+
+var 	syntax        = 'sass'; // Syntax: sass or scss;
+var 	gulp          = require('gulp'),
 		gutil         = require('gulp-util' ),
 		sass          = require('gulp-sass'),
 		browserSync   = require('browser-sync'),
@@ -11,8 +12,6 @@ var gulp          = require('gulp'),
 		autoprefixer  = require('gulp-autoprefixer'),
 		notify        = require("gulp-notify"),
 		rsync         = require('gulp-rsync');
-
-var git = require('gulp-git');
 
 gulp.task('browser-sync', function() {
 	browserSync({
@@ -39,12 +38,13 @@ gulp.task('styles', function() {
 gulp.task('js', function() {
 	return gulp.src([
 		'app/libs/jquery/dist/jquery.min.js',
-		'node_modules/jquery/dist/jquery.js',
-		'node_modules/owl.carousel/dist/owl.carousel.min.js',
+		'app/libs/waypoints/waypoints.min.js',
+		'app/libs/owl.carousel/dist/owl.carousel.min.js',
+		'app/libs/animate/animate.js',
 		'app/js/common.js', // Always at the end
 		])
 	.pipe(concat('scripts.min.js'))
-	// .pipe(uglify()) // Mifify js (opt.)
+	//.pipe(uglify()) // Mifify js (opt.)
 	.pipe(gulp.dest('app/js'))
 	.pipe(browserSync.reload({ stream: true }))
 });
@@ -66,7 +66,7 @@ gulp.task('rsync', function() {
 
 gulp.task('watch', ['styles', 'js', 'browser-sync'], function() {
 	gulp.watch('app/'+syntax+'/**/*.'+syntax+'', ['styles']);
-	gulp.watch(['libs/**/*.js', 'app/js/common.js'], ['js']);
+	gulp.watch(['libs/**/*.js', 'libs/animate/animate.js', 'app/js/common.js'], ['js']);
 	gulp.watch('app/*.html', browserSync.reload)
 });
 
