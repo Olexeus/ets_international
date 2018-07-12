@@ -42,6 +42,63 @@ body
 b, strong
 	font-weight: bold
 
+.loader
+	background: none repeat scroll 0 0 #ffffff
+	bottom: 0
+	height: 100%
+	left: 0
+	position: fixed
+	right: 0
+	top: 0
+	width: 100%
+	z-index: 9999
+	.loader_inner
+		// background-image: url("../img/preload.gif")
+		// background-size: cover
+		// background-repeat: no-repeat
+		// background-posirion: center center
+		height: 60px
+		width: 60px
+		margin-top: -30px
+		margin-left: -30px
+		left: 50%
+		top: 50%
+		position: absolute
+
+$loader-ring-size: 100px
+$loader-ring-border-size: 3px
+
+.loader-ring 
+	position: absolute
+	top: 50%
+	left: 50%
+	margin: $loader-ring-size/-2 0 0 $loader-ring-size/-2
+	width: $loader-ring-size
+	height: $loader-ring-size
+
+.loader-ring-light 
+	width: $loader-ring-size
+	height: $loader-ring-size
+	border-radius: ($loader-ring-size)
+	box-shadow: (0 $loader-ring-border-size 0 lighten($main-2, 10%) inset)
+	animation: rotate-360 2s linear infinite
+
+.loader-ring-track 
+	position: absolute
+	top: 0
+	left: 0
+	width: $loader-ring-size
+	height: $loader-ring-size
+	border-radius: ($loader-ring-size)
+	box-shadow: (0 0 10px $loader-ring-border-size rgba($black, .3) inset)
+
+@keyframes rotate-360 
+	0%
+		transform: rotate(0deg)
+	100%
+		transform: rotate(360deg)
+
+
 header
 	height: calc(100vh - 100px)
 	+media-breakpoint-down(md)
@@ -140,6 +197,9 @@ header
 			font-size: 18px	
 			transition: 0.3s ease
 			&:hover
+				color: $text-accent
+			&.active
+				transition: 0.3s ease
 				color: $text-accent
 
 +media-breakpoint-down(md)
@@ -342,25 +402,21 @@ header
 		margin: 0 65px
 
 @-webkit-keyframes sdb07
-  0%
-    opacity: 0
-
-  50%
-    opacity: 1
-
-  100%
-    opacity: 0
+	0%
+		opacity: 0
+	50%
+		opacity: 1
+	100%
+		opacity: 0
 
 
 @keyframes sdb07
-  0%
-    opacity: 0
-
-  50%
-    opacity: 1
-
-  100%
-    opacity: 0
+	0%
+		opacity: 0
+	50%
+		opacity: 1
+	100%
+		opacity: 0
 
 +media-breakpoint-down(lg)
 	.owl-one
@@ -857,6 +913,10 @@ hr
 				border-bottom: none
 
 @media (max-width: 400px)
+	.approach
+		height: 1340px
+
+@media (max-width: 320px)
 	.approach
 		height: 1550px
 

@@ -1,21 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="982.5" height="982.5" viewBox="0 0 655 655">
-  <defs>
-    <style>
-      .cls-1, .cls-2 {
-        fill: #fff;
-      }
-
-      .cls-1 {
-        stroke: #fff;
-        stroke-linejoin: round;
-        stroke-opacity: 0.5;
-        stroke-width: 1px;
-        fill-opacity: 0;
-      }
-    </style>
-  </defs>
-  <g>
-    <circle cx="327.5" cy="327.5" r="324" class="cls-1"/>
-    <circle cx="328.5" cy="328.5" r="275" class="cls-2"/>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" width="982.5" height="982.5" preserveAspectRatio="xMidYMid" viewBox="0 0 655 655">
+  <circle cx="327.5" cy="327.5" r="324" fill="none" stroke="#fff" stroke-linejoin="round" stroke-opacity=".5"/>
+  <circle cx="328.5" cy="328.5" r="275" fill="#fff"/>
 </svg>
