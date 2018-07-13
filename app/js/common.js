@@ -16,7 +16,6 @@ $(window).on( "load",function() {
 		$(".about-us-text").animated("fadeInUp", "fadeOutDown", '90%' );
 		$(".about-us-2-container").animated("zoomIn", "zoomOut", '70%' ); 
 		$(".solutions-item, .solutions-title-fade-up").animatedDown("fadeInUp", "fadeOutDown", '85%' );
-		$(".owl-two").animated("fadeInUp", "fadeOutDown", '85%' ); 
 		// $(".fade-right").animated("fadeInRight", "fadeOutRight", '90%' ); 
 		// $(".solutions-item-icon, .solutions-item-title, .solutions-item-desc, .solutions-item-btn").animated("fadeInUp", "none", '90%' );
 	} if ($( window ).width() < 650) {
@@ -24,7 +23,6 @@ $(window).on( "load",function() {
 		$(".about-us-text").animated("fadeInUp", "fadeOutDown", '90%' );
 		$(".about-us-2-container").animated("fadeInUp", "fadeOutDown", '70%' ); 
 		$(".solutions-item, .solutions-title-fade-up").animatedDown("fadeInUp", "fadeOutDown", '85%' ); 
-		$(".owl-two").animated("fadeInUp", "fadeOutDown", '85%' );
 	}
 
 	// Main slider
@@ -171,20 +169,26 @@ function onScroll(event){
 	$('.mnu-line a').each(function () {
 		var currLink = $(this);
 		var refElement = $(currLink.attr("href"));
-		if ( $( "#slider" ).height() >= scrollPos + 5 ) {
-			$('.mnu-line li a').removeClass("active");
-			$('.mnu-line li').find("a[href$='#slider']").addClass("active");
-		} else if ( $(document).height() - $( window ).height() <= scrollPos + 5 ) {
-			$('.mnu-line li a').removeClass("active");
-			$('.mnu-line li').find("a[href$='#contacts']").addClass("active");
-		} else if (
-				refElement.position().top - $(".mnu").outerHeight(true) <= scrollPos 
-				&& refElement.position().top + refElement.height() + $(".mnu").outerHeight(true) > scrollPos
-			) {
-			$('.mnu-line li a').removeClass("active");
-			currLink.addClass("active");
+		var t = currLink.attr("href");
+		var afterWithout = t.substr(0, t.lastIndexOf("#"));
+		if (afterWithout == "") {
+			if ( $( "#slider" ).height() >= scrollPos + 5 ) {
+				$('.mnu-line li a').removeClass("active");
+				$('.mnu-line li').find("a[href$='#slider']").addClass("active");
+			} else if ( $(document).height() - $( window ).height() <= scrollPos + 5 ) {
+				$('.mnu-line li a').removeClass("active");
+				$('.mnu-line li').find("a[href$='#contacts']").addClass("active");
+			} else if (
+					refElement.position().top - $(".mnu").outerHeight(true) <= scrollPos 
+					&& refElement.position().top + refElement.height() + $(".mnu").outerHeight(true) > scrollPos
+				) {
+				$('.mnu-line li a').removeClass("active");
+				currLink.addClass("active");
+			} else {
+				currLink.removeClass("active");
+			}
 		} else {
-			currLink.removeClass("active");
+			return;
 		}
 	});
 }

@@ -99,10 +99,10 @@ $loader-ring-border-size: 3px
 		transform: rotate(360deg)
 
 
-header
-	height: calc(100vh - 100px)
-	+media-breakpoint-down(md)
-		height: calc(100vh - 60px)
+// header
+// 	height: calc(100vh - 100px)
+// 	+media-breakpoint-down(md)
+// 		height: calc(100vh - 60px)
 
 .mnu 
 	height: 100px
@@ -1246,5 +1246,217 @@ hr
 			font-family: "helvetica-5"
 			font-size: 14px
 			color: #53595e
+
+/* Sub pages design */
+.product-head
+	height: 500px
+	width: 100%
+	margin-top: 100px
+	padding-top: 50px
+	position: relative
+	background-size: cover
+	background-position: center
+	&:before
+		content: ' '
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background-color: $black
+		opacity: 0.2
+	.container, .row, .col-md-12
+		height: 100%
+	+media-breakpoint-down(md)
+		margin-top: 60px
+	&-bc
+		color: $main
+		text-align: left
+		text-transform: uppercase
+		font-family: "helvetica-6"
+		font-size: 16px
+		letter-spacing: 0.6px
+		word-spacing: 1px
+		a
+			margin-right: 12px
+			color: $main
+			text-decoration: none
+			transition: 0.3s ease
+			&:hover
+				color: $text-accent
+		& :last-child
+			margin: 0 12px
+	&-title
+		color: $main
+		text-align: left
+		text-shadow: 0px 0px 5px $black
+		position: absolute
+		bottom: 50px
+		font-size: 54px
+		+media-breakpoint-down(md)
+			font-size: 44px
+		@media (max-width: 420px)
+			font-size: 32px
+
+.sub-title
+	font-family: helvetica-7
+	line-height: 1.1
+	display: inline-block
+	text-align: left
+	text-transform: uppercase
+	font-size: 22px
+	padding-bottom: 22px
+	color: $text-accent
+	border-bottom: 4px solid $text-accent
+
+.description
+	padding: 75px 0
+	&-sub-title
+		padding: 30px 0
+		font-family: helvetica-4
+		font-size: 35px
+		font-weight: 100
+		line-height: 1.45
+		color: $text
+		word-spacing: 2px
+		letter-spacing: 1px
+	&-text
+		p
+			padding: 5px 0
+			font-family: helvetica-5
+			font-size: 20px
+			font-weight: 100
+			line-height: 1.6
+			color: $text
+			letter-spacing: 0.2px
+	&-cite
+		margin: 40px 0
+		padding: 30px 0 
+		border-top: 1px solid $text-minor
+		border-bottom: 1px solid $text-minor
+		color: $text-minor
+		&-text
+			padding-right: 20px
+			padding-bottom: 20px
+			margin: 0
+			font-family: helvetica-4
+			font-style: normal
+			font-weight: 100
+			font-size: 32px
+			word-spacing: 1px
+			letter-spacing: 1px
+		&-author
+			margin: 0
+			text-align: right
+			&:before
+				content: "\2014"
+	&-list
+		margin-top: 20px
+		padding-left: 0
+		clear: both
+		text-align: left
+		+media-breakpoint-down(sm)
+			padding-left: 30px
+		&-sub-title
+		&-item
+			position: relative
+			margin-bottom: 35px
+			list-style-type: none
+			&:before
+				content: ''
+				height: 14px
+				width: 14px
+				margin-top: 2px
+				position: absolute
+				left: -28px
+				background-size: 14px
+				background-image: url("../img/list-style-item-accent.svg")
+				background-repeat: no-repeat
+		&-number
+			position: absolute
+			top: -30px
+			left: -165px
+			width: 100px
+			height: 125px
+			text-align: center
+			font-size: 86px
+			color: $main
+			border-bottom: solid 1px $main
+		&-title
+			margin-bottom: 10px
+			text-align: left
+			text-transform: uppercase
+			font-size: 16px
+			font-family: "helvetica-5"
+			letter-spacing: 1.1px
+			line-height: 1.2
+			position: relative
+		&-desc
+			margin-bottom: 
+			text-align: left
+			font-family: "helvetica-5"
+			font-size: 16px
+			color: $text-minor
+			position: relative
+
+.interaction
+	padding: 75px 0
+	background-color: $main-accent
+	&-img-wrap
+		width: 100%
+		height: 100%
+		img
+			max-width: 100%
+			max-height: 100%
+	&-title
+		margin-bottom: 30px
+		+media-breakpoint-down(md)
+			margin-top: 40px
+	&-text
+		p
+			font-family: "helvetica-6"
+			font-size: 18px
+			color: $text-minor
+
+.read-more
+	&-btn-cont
+		display: flex
+		justify-content: center
+		padding: 40px 0
+		+media-breakpoint-down(md)
+			display: block
+			padding: 30px 0
+	&-btn-wrap
+		padding: 0 40px
+		position: relative
+		+media-breakpoint-down(md)
+			display: flex
+			justify-content: center
+			padding: 10px 40px
+	&-btn
+		height: auto
+		width: 270px
+		padding: 0 5px
+		display: inline-block
+		line-height: 56px
+		text-align: center
+		text-decoration: none
+		text-transform: uppercase
+		font-size: 14px
+		font-family: "helvetica-7"
+		font-weight: bold
+		letter-spacing: 1.1px
+		word-spacing: 3px
+		border-radius: 3px
+		background-color: $text-accent
+		color: $main
+		transition: 0.3s ease
+		@media (max-width: 370px)
+			padding: 15px 5px
+			line-height: 1.2
+		&:hover
+			text-decoration: none
+			background-color: $main
+			color: $black
 
 @import "media" // Always at the end
