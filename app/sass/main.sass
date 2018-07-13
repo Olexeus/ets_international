@@ -1201,30 +1201,29 @@ hr
 	&-social
 		&-title
 		&-line
-			display: flex
+			// display: flex
 			+media-breakpoint-down(xs)
 				align-items: center
 				justify-content: center	
 		&-cont
-			margin: 8px
-			height: 36px
-			width: 36px
-			background-color: $main
-			border-radius: 100%
-			display: flex
-			align-items: center
-			justify-content: center	
-			transition: 0.3s ease
-			&:hover
-				background-color: $text-accent
-			&:nth-child(4n+1)
-				margin-left: 0
-			img
-				max-height: 18px
-				max-width: 18px
+			margin: 8px 8px 8px 0
+			display: inline-block
+			a
+				height: 36px
+				width: 36px
+				background-color: $main
+				border-radius: 100%
+				display: flex
+				align-items: center
+				justify-content: center	
+				transition: 0.3s ease
+				&:hover
+					background-color: $text-accent
+				img
+					max-height: 18px
+					max-width: 18px
 			+media-breakpoint-down(xs)
-				&:nth-child(4n+1)
-					margin-left: 10px
+				margin: 8px
 	&-credits
 		text-align: center
 		hr
@@ -1356,7 +1355,7 @@ hr
 		clear: both
 		text-align: left
 		+media-breakpoint-down(sm)
-			padding-left: 30px
+			padding-left: 15px
 		&-sub-title
 		&-item
 			position: relative
