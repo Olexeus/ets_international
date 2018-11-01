@@ -1,7 +1,7 @@
 {
   "name": "ets",
   "version": "4.0.0",
-  "description": "ETS - International",
+  "description": "TMS - International",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
